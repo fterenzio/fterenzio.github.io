@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orientamento | Filosofia e Scienze dell’Educazione</title>
+    <title>Orientamento | Filosofia e Scienze dell’Educazione | Ud'A</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --uda-blue: #003C71;
@@ -15,7 +15,6 @@
             --text-color: #343a40;
             --heading-color: #00284D;
             --border-color: #e1e5e9;
-            --accent-gold: #ffc107;
         }
 
         *, *::before, *::after {
@@ -23,10 +22,11 @@
         }
 
         body {
-            font-family: 'Titillium Web', sans-serif;
+            font-family: 'Georgia', serif;
             margin: 0;
             color: var(--text-color);
             background-color: #fff;
+            line-height: 1.6;
         }
 
         .container {
@@ -34,33 +34,34 @@
             margin: 0 auto;
             padding: 0 20px;
         }
-
-        .hero {
+        
+        /* --- Hero Header --- */
+        .hero-header {
             background: linear-gradient(45deg, var(--uda-blue), #0056b3);
             color: white;
             padding: 60px 20px 40px;
             text-align: center;
         }
-        .hero h1 {
+        .hero-header h1 {
             font-size: 3.5rem;
-            font-weight: 700;
+            font-weight: bold;
             margin: 0;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
-        .hero p {
+        .hero-header p {
             font-size: 1.5rem;
+            font-family: 'Lato', sans-serif;
             font-weight: 300;
             margin: 10px 0 0;
             opacity: 0.9;
         }
-
+        
         .intro-section {
             background-color: var(--background-grey);
             text-align: center;
             padding: 40px 20px;
-            border-bottom: 1px solid var(--border-color);
         }
-        .intro-section h2 {
+        .intro-section h3 {
             font-size: 2rem;
             color: var(--heading-color);
             margin-top: 0;
@@ -68,6 +69,7 @@
         .intro-section p {
             max-width: 800px;
             margin: 0 auto;
+            font-family: 'Lato', sans-serif;
             line-height: 1.7;
         }
 
@@ -75,7 +77,6 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1px;
-            background-color: var(--border-color);
             padding: 40px 0;
             background-color: #fff;
         }
@@ -99,7 +100,7 @@
             font-size: 3rem;
             color: var(--uda-lightblue);
         }
-        .curriculum-header h2 {
+        .curriculum-header h4 {
             font-size: 2.2rem;
             color: var(--heading-color);
             margin: 10px 0 5px;
@@ -107,10 +108,11 @@
         .curriculum-header .class-id {
             font-size: 1.2rem;
             color: #6c757d;
+            font-family: 'Lato', sans-serif;
             font-weight: 600;
         }
         
-        .info-block h3 {
+        .info-block h5 {
             font-size: 1.4rem;
             color: var(--uda-blue);
             margin-bottom: 10px;
@@ -122,10 +124,14 @@
             margin-right: 10px;
             fill: var(--uda-blue);
         }
+        .info-block p {
+             font-family: 'Lato', sans-serif;
+        }
 
         .accordion-item-header {
             padding: 15px;
             cursor: pointer;
+            font-family: 'Lato', sans-serif;
             font-weight: 600;
             font-size: 1.1rem;
             display: flex;
@@ -148,6 +154,7 @@
             border-top: none;
             border-radius: 0 0 5px 5px;
             padding: 0 20px;
+            font-family: 'Lato', sans-serif;
         }
          .accordion-item-body ul { list-style: none; padding: 0; margin: 15px 0; }
          .accordion-item-body li { margin-bottom: 10px; position: relative; padding-left: 20px; }
@@ -161,13 +168,23 @@
             top: -3px;
         }
 
+        .logo-section {
+            background-color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .logo-section img {
+            height: 100px;
+            max-width: 100%;
+        }
+
         .social-section {
             background-color: #302d73;
             color: white;
             padding: 50px 20px;
             text-align: center;
         }
-        .social-section h2 {
+        .social-section h3 {
             font-size: 2.5rem;
             font-weight: 700;
             margin-top: 0;
@@ -175,6 +192,7 @@
         }
         .social-section p {
             font-size: 1.2rem;
+            font-family: 'Lato', sans-serif;
             font-weight: 300;
             margin-bottom: 40px;
             max-width: 600px;
@@ -192,6 +210,7 @@
             color: white;
             text-decoration: none;
             font-size: 1.1rem;
+            font-family: 'Lato', sans-serif;
             font-weight: 600;
             display: flex;
             flex-direction: column;
@@ -215,19 +234,20 @@
             color: white;
             text-align: center;
             padding: 20px;
+            font-family: 'Lato', sans-serif;
         }
 
         @media (max-width: 992px) {
             .main-content { grid-template-columns: 1fr; }
             .curriculum-column:first-child { border-right: none; }
-            .hero h1 { font-size: 2.5rem; }
-            .hero p { font-size: 1.2rem; }
+            .hero-header h1 { font-size: 2.5rem; }
+            .hero-header p { font-size: 1.2rem; }
         }
     </style>
 </head>
 <body>
 
-    <header class="hero">
+    <header class="hero-header">
         <div class="container">
             <h1>Filosofia e Scienze dell’Educazione</h1>
             <p>Un unico corso, due percorsi per costruire il tuo pensiero e il tuo futuro.</p>
@@ -236,7 +256,7 @@
 
     <section class="intro-section">
         <div class="container">
-            <h2>Un percorso formativo flessibile e integrato</h2>
+            <h3>Un percorso formativo flessibile e integrato</h3>
             <p>Il nostro Corso di Laurea Interclasse è pensato per offrirti una solida base culturale comune nei primi due anni. Potrai esplorare discipline filosofiche, pedagogiche e psicologiche prima di scegliere la tua specializzazione al terzo anno, costruendo un profilo unico e versatile.</p>
         </div>
     </section>
@@ -245,31 +265,31 @@
         <div class="curriculum-column">
             <div class="curriculum-header">
                 <span class="icon">🏛️</span>
-                <h2>Laurea in Filosofia</h2>
+                <h4>Laurea in Filosofia</h4>
                 <span class="class-id">Classe L-5</span>
             </div>
             
             <div class="info-block">
-                <h3>
+                <h5>
                     <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
                     Obiettivi
-                </h3>
+                </h5>
                 <p>Formare laureati con una solida padronanza della storia del pensiero, capaci di analizzare criticamente problemi complessi e di argomentare con rigore. Svilupperai competenze logiche, ermeneutiche ed etiche fondamentali.</p>
             </div>
 
             <div class="info-block">
-                 <h3>
+                 <h5>
                     <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
                     Sbocchi Occupazionali
-                </h3>
+                </h5>
                 <p>Giornalismo ed editoria, comunicazione pubblica e d'impresa, gestione delle risorse umane, bioetica, consulenza filosofica, carriere nel settore pubblico e nell'insegnamento (previo percorso abilitante).</p>
             </div>
 
             <div class="info-block">
-                <h3>
+                <h5>
                      <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
                     Piano di Studi A.A. 2025/26
-                </h3>
+                </h5>
                 <div class="accordion">
                     <div class="accordion-item"><div class="accordion-item-header">1° Anno</div><div class="accordion-item-body">
                         <ul>
@@ -302,28 +322,28 @@
         <div class="curriculum-column">
              <div class="curriculum-header">
                 <span class="icon">🌱</span>
-                <h2>Scienze dell'Educazione</h2>
+                <h4>Scienze dell'Educazione</h4>
                 <span class="class-id">Classe L-19</span>
             </div>
             <div class="info-block">
-                <h3>
+                <h5>
                      <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
                     Obiettivi
-                </h3>
+                </h5>
                 <p>Formare educatori e formatori professionisti, dotati di solide competenze teoriche e operative. Il corso fornisce strumenti per progettare, realizzare e valutare interventi educativi in diversi contesti (scuola, servizi, comunità).</p>
             </div>
             <div class="info-block">
-                <h3>
+                <h5>
                     <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
                     Sbocchi Occupazionali
-                </h3>
+                </h5>
                 <p>Educatore nei servizi per l'infanzia (asili nido) e nelle comunità, formatore aziendale, operatore in progetti di inclusione sociale, esperto in tecnologie per la didattica, orientatore scolastico e professionale.</p>
             </div>
              <div class="info-block">
-                <h3>
+                <h5>
                      <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
                     Piano di Studi A.A. 2025/26
-                </h3>
+                </h5>
                  <div class="accordion">
                     <div class="accordion-item"><div class="accordion-item-header">1° Anno</div><div class="accordion-item-body">
                         <ul>
@@ -351,10 +371,16 @@
             </div>
         </div>
     </main>
+    
+    <section class="logo-section">
+        <div class="container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Seal_of_the_University_of_Chieti-Pescara.png" alt="Logo Università G. d'Annunzio">
+        </div>
+    </section>
 
     <section class="social-section">
         <div class="container">
-            <h2>Rimani Connesso con Ud'A Filosofia</h2>
+            <h3>Rimani Connesso con Ud'A Filosofia</h3>
             <p>Organizziamo tanti eventi interessanti di filosofia. Non perderteli, seguici sui nostri canali!</p>
             <div class="social-links">
                 <a href="https://www.facebook.com/profile.php?id=61556975157665" target="_blank" rel="noopener noreferrer">
@@ -374,7 +400,7 @@
     </section>
     
     <footer>
-        <p>Dipartimento di Scienze Filosofiche, Pedagogiche ed Economico-Quantitative | Università degli Studi "G. d'Annunzio"</p>
+        <p>Dipartimento di Scienze Filosofiche, Pedagogiche ed Economico-Quantitative</p>
     </footer>
 
     <script>
