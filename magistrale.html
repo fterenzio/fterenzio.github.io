@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orientamento | Laurea Magistrale in Scienze Filosofiche (LM-78) | Ud'A</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --uda-blue: #003C71;
+            --uda-lightblue: #007bff;
+            --background-grey: #f4f6f8;
+            --text-color: #343a40;
+            --heading-color: #00284D;
+            --border-color: #e1e5e9;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            color: var(--text-color);
+            background-color: #fff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* --- Hero Header --- */
+        .hero-header {
+            background: linear-gradient(45deg, var(--uda-blue), #0056b3);
+            color: white;
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+        .hero-header h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        .hero-header p {
+            font-size: 1.5rem;
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            margin: 10px 0 0;
+            opacity: 0.9;
+        }
+        
+        .intro-section {
+            background-color: var(--background-grey);
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .intro-section h3 {
+            font-size: 2rem;
+            color: var(--heading-color);
+            margin-top: 0;
+        }
+        .intro-section p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-family: 'Lato', sans-serif;
+            line-height: 1.7;
+        }
+
+        .main-content {
+            padding: 40px 0;
+            background-color: #fff;
+        }
+
+        .curriculum-column {
+            background-color: white;
+            padding: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .curriculum-header {
+            text-align: center;
+            border-bottom: 2px solid var(--uda-lightblue);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        .curriculum-header .icon {
+            font-size: 3rem;
+            color: var(--uda-lightblue);
+        }
+        .curriculum-header h4 {
+            font-size: 2.5rem;
+            color: var(--heading-color);
+            margin: 10px 0 5px;
+        }
+        .curriculum-header .class-id {
+            font-size: 1.2rem;
+            color: #6c757d;
+            font-family: 'Lato', sans-serif;
+            font-weight: 600;
+        }
+        
+        .info-block {
+            margin-bottom: 40px;
+        }
+
+        .info-block h5 {
+            font-size: 1.6rem;
+            color: var(--uda-blue);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-block .icon-svg {
+            margin-right: 10px;
+            fill: var(--uda-blue);
+        }
+        .info-block p, .info-block ul {
+             font-family: 'Lato', sans-serif;
+        }
+        .info-block ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .info-block li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+        .info-block li::before {
+            content: '✓';
+            color: var(--uda-lightblue);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+
+        .accordion-item-header {
+            padding: 15px;
+            cursor: pointer;
+            font-family: 'Lato', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--background-grey);
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .accordion-item-header:hover { background-color: #e9ecef; }
+        .accordion-item-header::after { content: '+'; font-size: 1.5rem; transition: transform 0.3s; }
+        .accordion-item.active .accordion-item-header::after { transform: rotate(45deg); }
+        .accordion-item-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+            border: 1px solid var(--border-color);
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+            padding: 0 20px;
+            font-family: 'Lato', sans-serif;
+        }
+         .accordion-item-body ul { list-style: none; padding: 0; margin: 15px 0; }
+         .accordion-item-body li { margin-bottom: 10px; position: relative; padding-left: 20px; }
+         .accordion-item-body li::before {
+            content: '›';
+            color: var(--uda-lightblue);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+            top: -3px;
+        }
+
+        .logo-section {
+            background-color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .logo-section img {
+            height: 100px;
+            max-width: 100%;
+        }
+
+        .social-section {
+            background-color: #302d73;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .social-section h3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .social-section p {
+            font-size: 1.2rem;
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-family: 'Lato', sans-serif;
+            font-weight: 600;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s, opacity 0.3s;
+            opacity: 0.9;
+        }
+        .social-links a:hover {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+        .social-links svg {
+            width: 48px;
+            height: 48px;
+            fill: white;
+        }
+
+        footer {
+            background-color: var(--heading-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-family: 'Lato', sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="hero-header">
+        <div class="container">
+            <h1>Laurea Magistrale in Scienze Filosofiche</h1>
+            <p>Approfondisci il tuo pensiero, specializza le tue competenze.</p>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="curriculum-column">
+            <div class="curriculum-header">
+                <span class="icon">🎓</span>
+                <h4>Corso di Laurea Magistrale</h4>
+                <span class="class-id">Classe LM-78</span>
+            </div>
+            
+            <div class="info-block">
+                <h5>
+                    <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    Obiettivi Formativi
+                </h5>
+                <p>Il corso intende fornire una preparazione specialistica nell'ambito della ricerca filosofica, con particolare attenzione alle sue implicanze etiche, antropologiche, epistemologiche e metafisiche. L'obiettivo è formare laureati in grado di svolgere attività di ricerca, insegnamento e consulenza di alto profilo, dotati di autonomia di giudizio e di avanzate capacità critiche e argomentative.</p>
+            </div>
+
+            <div class="info-block">
+                 <h5>
+                    <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
+                    Sbocchi Occupazionali
+                </h5>
+                <ul>
+                    <li>Ricerca e insegnamento in ambito accademico e nella scuola secondaria (con percorso abilitante).</li>
+                    <li>Alta consulenza in comitati etici e bioetici.</li>
+                    <li>Dirigenza e coordinamento nel settore pubblico e nel privato sociale.</li>
+                    <li>Specialista in gestione e conservazione del patrimonio culturale e documentale.</li>
+                    <li>Carriere nell'editoria specialistica, nel giornalismo culturale e nella comunicazione.</li>
+                </ul>
+            </div>
+
+            <div class="info-block">
+                <h5>
+                     <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                    Piano di Studi
+                </h5>
+                <div class="accordion">
+                    <div class="accordion-item"><div class="accordion-item-header">1° Anno di Corso</div><div class="accordion-item-body">
+                        <strong>Insegnamenti Obbligatori:</strong>
+                        <ul>
+                            <li>Storia della filosofia medievale</li>
+                            <li>Filosofia teoretica</li>
+                            <li>Estetica</li>
+                        </ul>
+                        <strong>Insegnamenti a Scelta:</strong>
+                        <ul>
+                            <li>Filosofia del linguaggio</li>
+                            <li>Logica e filosofia della scienza</li>
+                        </ul>
+                        <ul>
+                            <li>Antropologia filosofica</li>
+                            <li>Storia della filosofia antica</li>
+                            <li>Storia della filosofia moderna</li>
+                        </ul>
+                         <strong>Altre attività:</strong>
+                        <ul><li>Crediti a scelta libera (12 CFU)</li></ul>
+                    </div></div>
+                    <div class="accordion-item"><div class="accordion-item-header">2° Anno di Corso</div><div class="accordion-item-body">
+                        <strong>Insegnamenti Obbligatori:</strong>
+                        <ul>
+                            <li>Ermeneutica filosofica</li>
+                            <li>Filosofia morale</li>
+                        </ul>
+                         <strong>Insegnamenti a Scelta:</strong>
+                        <ul>
+                            <li>Storia della filosofia contemporanea</li>
+                            <li>Filosofia politica</li>
+                            <li>Filosofia della religione</li>
+                        </ul>
+                        <ul>
+                            <li>Storia delle dottrine politiche</li>
+                            <li>Storia del cristianesimo e delle chiese</li>
+                        </ul>
+                        <strong>Altre attività:</strong>
+                        <ul>
+                            <li>Prova finale</li>
+                            <li>Tirocinio: un'occasione formativa opzionale per chi desidera un'esperienza in azienda.</li>
+                        </ul>
+                    </div></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <section class="logo-section">
+        <div class="container">
+            <img src="https://i.imgur.com/lZyoC0Y.png" alt="Logo Università G. d'Annunzio">
+        </div>
+    </section>
+
+    <section class="social-section">
+        <div class="container">
+            <h3>Rimani Connesso con Ud'A Filosofia</h3>
+            <p>Organizziamo tanti eventi interessanti di filosofia. Non perderteli, seguici sui nostri canali!</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=61556975157665" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-1.5c-1 0-1.5.5-1.5 1.5V12h3l-.5 3h-2.5v6.8c4.56-.93 8-4.96 8-9.8z"/></svg>
+                    <span>Facebook</span>
+                </a>
+                <a href="https://www.instagram.com/udafilosofia/" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://unich.us21.list-manage.com/subscribe?u=9ca9f5a93de35b7841943af66&id=f75364d816" target="_blank" rel="noopener noreferrer">
+                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    <span>Newsletter</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>Dipartimento di Scienze Filosofiche, Pedagogiche ed Economico-Quantitative | Università "G. d'Annunzio" di Chieti-Pescara</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const accordionItems = document.querySelectorAll('.accordion-item');
+            accordionItems.forEach(item => {
+                const header = item.querySelector('.accordion-item-header');
+                header.addEventListener('click', () => {
+                    const body = item.querySelector('.accordion-item-body');
+                    const isActive = item.classList.contains('active');
+                    if (isActive) {
+                        item.classList.remove('active');
+                        body.style.maxHeight = 0;
+                    } else {
+                        item.classList.add('active');
+                        body.style.maxHeight = body.scrollHeight + 'px';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
